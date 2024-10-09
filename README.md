@@ -1,0 +1,1 @@
+# rent_checker_static
