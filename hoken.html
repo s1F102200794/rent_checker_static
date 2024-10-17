@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENT CHECKER</title>
+
+  <!-- ファビコン -->
+  <link rel="icon" type="image/png" href="{% static 'app/img/favicon.png' %}">
+  <!-- tailwindcss -->
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.min.css' %" /> -->
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <!-- モリサワフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+</head>
+
+<body class="leading-normal tracking-normal text-gray-500 bg-gray-100">
+  <!--ヘッダー-->
+  <nav class="fixed w-full z-30 top-0 text-white bg-yellow-200">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+      <div class="pl-4 flex items-center">
+        <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="/">
+          <i class="fa-solid fa-check h-8 inline"></i>
+          RENT CHECKER
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle" class="flex items-center p-1 text-gray-500">
+          <i class="fa-solid fa-bars h-8 w-8"></i>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="nav-content">
+        <ul class="lg:flex items-center justify-between text-base text-gray-500 pt-4 lg:pt-0">
+          <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-yellow-100"
+              href="{% url 'signup' %}">新規登録</a></li>
+          <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-yellow-100"
+              href="{% url 'login' %}">ログイン</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
+
+
+  <!--ここから-->
+  <div class="pt-24">
+    <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+      
+      <!--ここを埋める-->
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-gray-800">
+        保険の加入って必須なの？
+      </h2>
+      <div class="container px-5 mx-auto flex-wrap flex-col md:flex-row items-center">
+        <p>賃貸系契約において保険には法的な加入義務はありません！</p>
+        <p>しかし、ほとんどの物件で契約条件に設定されているため準備しておく必要があります</p>
+        <p>　</p>
+      </div>
+
+      <h3 class="w-full text-3xl text-gray-800 font-bold leading-none mb-3 bg-yellow-100 border-yellow-200 border-l-8 p-2">
+        一般的に契約する保険
+      </h3>
+      <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+        <p>賃貸住宅の保険に加入する目的は、原状回復義務を果たすためと家財を守るためです。</p>
+        <p>そのため、賃貸借契約時には火災保険に加入することがほとんどです。</p>
+        <p>一般的に加入する保険としては以下の3つの保険があります。</p>
+        <p class="text-gray-600 mb-5 px-6"></p>
+        <div class="bg-red-100 p-4 text-xl">
+            <ul>
+                <li>火災保険 (家財保険)</li>
+                <li>個人賠償責任保険</li>
+                <li>借家人賠償責任保険</li>
+            </ul>
+        </div>
+        <p class="text-gray-600 mb-5 px-6"></p>
+        <p>それぞれの保険について下記で詳しくみていこう</p>
+        <p>　</p>
+    </div>
+    <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+      <h3 class="w-full text-3xl text-gray-800 font-bold leading-none mb-3 bg-yellow-100 border-yellow-200 border-l-8 p-2">
+        火災保険（家財保険）
+      </h3>
+      <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+        <h4 class="text-xl">１．自分の家財への補償</h4>
+        <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+            <p>借主には火災で建物に損害があっても賠償義務はないが、</p>
+            <p>家財が被害を受けた場合の補償は準備することを推奨します。</p>
+            <p>家財保険の補償額は世帯人数や部屋の広さに応じた目安で決まるが、シンプルな補償で済む場合もある。</p>
+            <p class="text-gray-600 mb-5 px-6"></p>
+
+        </div>
+
+        <h4 class="text-xl">２．火災保険の加入が推奨される理由</h4>
+        <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+            <p>もらい火でも家財の損害は自己負担となるため、家電や家具などを補償するには火災保険が有効。</p>
+            <p>原状回復義務があり、火災や水漏れで部屋に損害を与えた場合、自己負担で修復する必要がある。火災保険はこの費用をカバーすることができる。</p>
+            <p>他の住人に損害を与えた場合の補償が必要な場合もあり、火災保険がリスク軽減に役立つ。</p>
+            <p class="text-gray-600 mb-5 px-6"></p>
+        </div>
+
+        <h4 class="text-xl">３．補償の制限</h4>
+        <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+            <p>1つの家財についての補償は最大100万円。貴金属や美術品などの「明記物件」は、あらかじめ保険会社に申告する必要があります。</p>
+            <p class="text-gray-600 mb-5 px-6"></p>
+        </div>
+
+      </div>
+      <h3 class="w-full text-3xl text-gray-800 font-bold leading-none mb-3 bg-yellow-100 border-yellow-200 border-l-8 p-2">
+        個人賠償責任保険
+      </h3>
+      <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+        <p>個人賠償責任保険とは、日常生活で他人に損害を与えたり、怪我などをさせてしまった場合の責任を補償するものです。</p>
+        <p class="text-gray-600 mb-5 px-6"></p>
+      </div>
+
+      <h3 class="w-full text-3xl text-gray-800 font-bold leading-none mb-3 bg-yellow-100 border-yellow-200 border-l-8 p-2">
+        借家人賠償責任保険
+      </h3>
+      <div class="container px-3 mx-auto flex-wrap flex-col md:flex-row items-center">
+        <p>借家人賠償責任保険とは、自分が原因で部屋を焼失させてしまい原状回復義務を果たせない場合や、水漏れによって床材の張り替えの必要性が生じた場合などに補償するものです。</p>
+        <p>通常の火災保険が自分の家財を補償するものであるのに対して、借家人賠償責任保険は大家さんに対する補償です。原状回復義務を果たすための補償と言えるでしょう。</p>
+        <p>借家人賠償責任保険に加入していない場合、原状回復義務のために高額の賠償責任を負うリスクもあるため、必ず加入しておくようにしましょう。</p>
+        <p class="text-gray-600 mb-5 px-6"></p>
+      </div>
+
+
+    </div>
+  </div>
+  <!--ここまで-->
+
+
+  <!--フッター-->
+  <footer class="bg-white">
+    <div class="container mx-auto px-8">
+      <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="flex-1 mb-6 text-gray-500">
+          <a class="text-yellow-200 no-underline hover:no-underline font-bold text-1xl lg:text-3xl" href="/">
+            <i class="fa-solid fa-check h-8 inline"></i>
+            RENT CHECKER
+          </a>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Links</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">FAQ</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">Help</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">Support</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">Terms</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Team</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-yellow-200">About Us</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="{% url 'contact_form' %}"
+                class="no-underline hover:underline text-gray-800 hover:text-yellow-200">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-sm">&copy; 2024 iniad.group10.team4</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('nav-toggle').onclick = function () {
+      var navContent = document.getElementById('nav-content');
+      navContent.classList.toggle('hidden');
+    };
+  </script>
